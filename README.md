@@ -1,6 +1,6 @@
 These are device cleanup scripts that I have created to optimise and restore the maximum performance of Windows 10/ Windows 11 PCs with minimal intervention.
 
-There are two different scripts, the "User-Optimiser" will remove old temporary files and junk that is associated with the user account that has initialised the script, the "System_Optimiser" will remove any system files and junk whilst keeping the user data intact.
+There are two different scripts, the "User-Optimiser" will remove old temporary files and junk that is associated with the user account that has initialised the script, the "System_Optimiser" will remove any system files and junk whilst keeping the user data intact. The "System_Optimiser" will also disable telemetry and other junk from your computer to maximise its performance whilst maintaining essential functionality. 
 
 I recommend that you run both scripts for maximum effectiveness in restoring the performance and smooth operation of your computer system, I recommend that you run the "System_Optimiser" first.
 
