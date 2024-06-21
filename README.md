@@ -1,3 +1,10 @@
+Visit Hackboto Tech Tips for the latest versions of Computer and Settings optimiser scripts
+https://hackbototechtips.github.io/download_centre.html
+
+
+
+
+
 I have created 4 different optimisation scripts that you can run on your Windows 10/ 11 computers to improve the performance, stability, reliability, efficiency, and to reduce the amount of adware and telemetry.
 
 The following is a breakdown of the different scripts so that you understand what they do and what they are suitable for, they are in the order that I recommend you run them:
