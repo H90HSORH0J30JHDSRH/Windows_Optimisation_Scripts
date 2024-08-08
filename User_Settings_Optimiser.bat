@@ -1,16 +1,28 @@
 @echo off
-:: Warning the user about closing and saving open files
-echo Warning: Please ensure all open files are closed and saved before proceeding.
+:: Print Script Title
+echo [94m-----User_Settings_Optimiser-----[0m
 echo.
-echo Warning: Running this script may result in loss of data. By proceeding, you agree that you have closed and saved all necessary files and take full responsibility for any potential data loss.
+echo [94mCreated By: Hackboto Tech Tips[0m
 echo.
-echo Warning: This script will change your settings.
+echo [94mVersion: 1.2.4[0m
 echo.
-echo Notice: Please run this script for each user account that is present on this computer system for maximum effectiveness, you should run the System_Settings_Optimiser before running this script.
+::Print Terms and Conditions
+echo -----Terms and Conditions-----
 echo.
-
-:: Prompting the user to confirm if they want to proceed with script
-set /p continue=Do you accept the terms and conditions (Y/N): 
+echo Running this script may result in loss of data. 
+echo.
+echo Please ensure all open files are closed and saved before proceeding.
+echo.
+echo This script will alter your system settings.
+echo.
+echo If you have not ran the System_Settings_Optimiser.bat on this computer already, please run it before proceeding with this script.
+echo.
+echo By proceeding, you agree take full responsibility for any potential data loss and all of the above.
+echo.
+echo Additional terms and conditions can be found at https://hackbototechtips.github.io/legal.html
+echo.
+:: Prompting the user to confirm if they want to proceed with system reg changes.
+set /p continue=Do you accept the terms and conditions? (If you accept, changes will make to your computer.) (Y/N): 
 
 :: Checking user input to decide whether to proceed with script or not
 if /i "%continue%"=="Y" (
@@ -53,6 +65,15 @@ if /i "%continue%"=="Y" (
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "HideSCAMeetNow" /t REG_DWORD /d 1 /f
 	reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" /v "ShowGlobalPrompts" /t REG_DWORD /d 0 /f
 	reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CPSS\Store" /v "UserLocationOverridePrivacySetting" /t REG_DWORD /d 0 /f
+	reg add "HKCU\SOFTWARE\Microsoft\Input\TIPC" /v "Enabled" /t REG_DWORD /d 0 /f
+	reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" /v PeopleBand /t REG_DWORD /d 0 /f
+	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds" /v ShellFeedsTaskbarViewMode /t REG_DWORD /d 2 /f
+	reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f
+	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\ImproveInkingAndTyping" /v "Value" /t REG_DWORD /d 0 /f
+	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v "Enabled" /t REG_DWORD /d 0 /f
+	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\AdvertisingInfo" /v "Value" /t REG_DWORD /d 0 /f
+	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\bluetoothSync" /v "Value" /t REG_SZ /d "Deny" /f
+	reg add "HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy" /v "HasAccepted" /t REG_DWORD /d 0 /f
     :: Informing the user that settings are applied
     powershell -WindowStyle Hidden -Command "[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null; [System.Windows.Forms.MessageBox]::Show('Your user account settings were successfully optimised.', 'Successful', 'OK', 'Information')" > nul
 
